@@ -1,0 +1,40 @@
+.MenuBar {
+  width: 100px;
+}
+
+.menu {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.addBtn {
+  margin-left: 10px;
+}
+
+.Btn {
+  font-size: 9px;
+  margin: 0;
+  padding-left: 1px;
+}
+
+input {
+  border: none;
+  width: 60px;
+  font-size: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.menu_item {
+  text-decoration-line: none;
+  color: gray;
+  font-size: 10px;
+}

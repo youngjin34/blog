@@ -1,0 +1,13 @@
+.App {
+  width: 800px;
+  margin: 0 auto;
+
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* gap: 30px; */
+}
+
+.Menubar {
+  float: left;
+  margin-right: 20px;
+}
