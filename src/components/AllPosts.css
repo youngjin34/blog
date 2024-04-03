@@ -1,0 +1,171 @@
+.AllPosts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2열로 설정 */
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 80%; /* 전체 폭을 조정 */
+  margin: 0 auto; /* 가운데 정렬 */
+}
+
+.postRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postColumn {
+  margin-bottom: 10px;
+}
+
+.postTitle {
+  text-decoration: none;
+  color: black;
+  font-weight: bold; /* 제목에 굵은 글씨 적용 */
+}
+
+.postContent {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 길면 생략되도록 설정 */
+  max-width: 200px; /* 최대 너비 설정 */
+  color: gray; /* 내용 색상 변경 */
+}
+
+.postDate {
+  color: gray;
+}
+
+.h {
+  font-size: 18px;
+  margin-bottom: 20px; /* 제목과 게시물 목록 사이의 간격 조정 */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+}
+
+.pagination button.active {
+  font-weight: bold;
+}
+
+/* Variables */
+:root {
+  --gray-darker: #444444;
+  --gray-dark: #696969;
+  --gray: #999999;
+  --gray-light: #cccccc;
+  --gray-lighter: #ececec;
+  --gray-lightest: #f6f6f6;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* Buttons */
+.btn {
+  background-color: white;
+  border: 1px solid var(--gray-light);
+  color: var(--gray-dark);
+  padding: 0.5rem;
+  text-transform: lowercase;
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+/* search */
+.search {
+  border: none;
+  border-bottom: 1px solid white;
+  background: none;
+  width: 110px;
+
+  margin-bottom: 10px;
+
+  float: right;
+  font-size: 12px;
+  color: white;
+}
+
+/* card */
+.cards__item {
+  display: flex;
+  padding: 1rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  width: 300px;
+  height: 280px;
+}
+
+.card:hover .card__image {
+  filter: contrast(100%);
+}
+
+.card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.card__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  filter: contrast(70%);
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+}
+
+.card__image::before {
+  content: '';
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+@media (min-width: 40rem) {
+  .card__image::before {
+    padding-top: 66.6%; /* 3:2 aspect ratio */
+  }
+}
+
+.card__title {
+  color: var(--gray-dark);
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card__text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 길면 생략되도록 설정 */
+  white-space: nowrap; /* 한 줄로만 표시되도록 설정 */
+}

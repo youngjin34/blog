@@ -1,13 +1,70 @@
+/* body {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: rgb(247, 240, 231);
+} */
+
+body {
+  background-color: rgb(12, 12, 12);
+  color: rgb(141, 114, 114);
+  display: flex;
+  margin-top: 10px;
+
+  justify-content: center;
+  font-family: 'Nanum Pen Script';
+  min-height: 100vh;
+}
+
+@media (min-width: 650px) {
+  .App {
+    width: 640px;
+  }
+}
+
+@media (max-width: 650px) {
+  .App {
+    width: 90vw;
+  }
+}
+
+@font-face {
+  font-family: 'SokchoBadaBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SokchoBadaBatang.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App {
   width: 800px;
   margin: 0 auto;
-
+  font-family: 'SokchoBadaBatang';
   /* display: flex; */
   /* flex-direction: column; */
   /* gap: 30px; */
 }
 
+.Home {
+}
+
+.AllPosts {
+  /* width: 100%;
+  margin-left: 10%;
+  margin-bottom: 50px; */
+}
+
 .Menubar {
   float: left;
-  margin-right: 20px;
+  height: 100%;
+  margin-right: 30px;
+}
+
+.MenuPage {
+}
+
+.PostDetail {
+  align-items: center;
+  justify-content: center;
 }

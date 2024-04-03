@@ -1,0 +1,64 @@
+.MenuPage {
+  width: 80%; /* 전체 폭을 조정 */
+  margin: 0 auto; /* 가운데 정렬 */
+  margin-bottom: 50px; /* 하단 마진 설정 */
+  color: rgb(228, 228, 228);
+}
+
+.post {
+  display: block;
+  text-decoration: none;
+  color: rgb(228, 228, 228);
+  margin-bottom: 20px; /* 각 게시물 사이의 간격 설정 */
+}
+
+.h {
+  font-size: 18px;
+  margin-bottom: 20px; /* 제목과 게시물 목록 사이의 간격 조정 */
+}
+
+.write_post {
+  text-decoration: none;
+  color: rgb(228, 228, 228);
+  float: left; /* 우측 정렬 */
+  margin-bottom: 20px; /* 버튼과 게시물 목록 사이의 간격 설정 */
+}
+
+.title {
+  display: inline-block;
+  width: 120px;
+}
+
+.content {
+  display: inline-block;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 길면 생략되도록 설정 */
+  max-width: 150px; /* 최대 너비 설정 */
+}
+
+.header {
+  display: inline-block;
+  width: 33%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #323333; /* 버튼 배경색 변경 */
+  color: white;
+}
+
+.pagination button.active {
+  background-color: #324852; /* 활성 페이지 버튼 배경색 변경 */
+}

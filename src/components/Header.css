@@ -1,6 +1,15 @@
+@font-face {
+  font-family: 'SokchoBadaBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SokchoBadaBatang.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .Header {
+  font-family: 'SokchoBadaBatang';
   text-decoration-line: none;
-  color: black;
+  color: rgb(141, 114, 114);
 }
 
 hr {

@@ -7,15 +7,19 @@ export default function Menubar() {
   const [menuInputVisible, setMenuInputVisible] = useState(false);
   const [menuItems, setMenuItems] = useState([]);
   const [newMenuItem, setNewMenuItem] = useState('');
+  const [selectedMenu, setSelectedMenu] = useState(null); // 추가된 상태
 
   useEffect(() => {
-    const unsubscribe = firestore.collection('menus').onSnapshot((snapshot) => {
-      const items = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setMenuItems(items);
-    });
+    const unsubscribe = firestore
+      .collection('menus')
+      .orderBy('createdAt', 'desc')
+      .onSnapshot((snapshot) => {
+        const items = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setMenuItems(items.reverse()); // Reverse the array to display items in the order they were created
+      });
     return () => unsubscribe();
   }, []);
 
@@ -31,6 +35,7 @@ export default function Menubar() {
     if (newMenuItem.trim() !== '') {
       await firestore.collection('menus').add({
         name: newMenuItem,
+        createdAt: new Date(), // Add createdAt field to record the creation time
       });
       setNewMenuItem('');
       setMenuInputVisible(false);
@@ -40,6 +45,10 @@ export default function Menubar() {
   const handleCancelAddMenuItem = () => {
     setMenuInputVisible(false);
     setNewMenuItem('');
+  };
+
+  const handleMenuClick = (menuId) => {
+    setSelectedMenu(menuId);
   };
 
   return (
@@ -66,10 +75,21 @@ export default function Menubar() {
           </button>
         </div>
       )}
+      <Link className="menu_item" to="/allposts">
+        <span className={selectedMenu === null ? 'selected' : ''}>
+          전체보기
+        </span>
+      </Link>
       {menuItems.map((item, index) => (
         <div key={index}>
-          <Link className="menu_item" to={`/menu/${item.id}`}>
-            {item.name}
+          <Link
+            className="menu_item"
+            to={`/menu/${item.id}`}
+            onClick={() => handleMenuClick(item.id)}
+          >
+            <span className={selectedMenu === item.id ? 'selected' : ''}>
+              {item.name}
+            </span>
           </Link>
         </div>
       ))}
