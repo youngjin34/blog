@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'; // useParams 추가
 import { firestore } from '../firebase';
 
+import './Write.css';
+
 export default function Write() {
   const { id } = useParams(); // useParams로부터 id를 받아옴
   const contentRef = useRef();
@@ -31,6 +33,7 @@ export default function Write() {
       <section>
         <h4>제목</h4>
         <textarea
+          className="write_title"
           placeholder="제목을 입력해주세요"
           ref={contentRef}
           value={title}
@@ -41,6 +44,7 @@ export default function Write() {
         <h4>내용</h4>
         <div>
           <textarea
+            className="write_content"
             placeholder="내용을 입력해주세요"
             ref={contentRef}
             value={content}

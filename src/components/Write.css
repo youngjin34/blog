@@ -1,0 +1,35 @@
+.Write {
+  /* width: 800px; */
+  align-items: center;
+  justify-content: center;
+}
+
+.write_title {
+  background-color: rgb(236, 215, 215);
+  color: black;
+
+  border: none;
+  border-radius: 5px;
+  outline: none;
+
+  scrollbar-width: none;
+  width: 80%;
+  height: 27px;
+
+  padding: 3px;
+}
+
+.write_content {
+  background-color: rgb(236, 215, 215);
+  color: black;
+
+  border: none;
+  border-radius: 5px;
+  outline: none;
+
+  scrollbar-width: none;
+  width: 80%;
+  height: 400px;
+
+  padding: 5px;
+}
