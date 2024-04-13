@@ -42,8 +42,12 @@ input:focus {
 
 .menu_item {
   text-decoration-line: none;
-  color: gray;
+  color: gray; /* 텍스트 색상을 회색으로 변경 */
   font-size: 15px;
 
   margin-bottom: 8px;
+}
+
+span {
+  display: block;
 }

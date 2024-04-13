@@ -1,9 +1,13 @@
 .introduction {
-  width: 80%;
+  width: 65%;
   align-items: center;
   margin-left: 300px;
   /* margin-bottom: 50px; */
   color: rgb(228, 228, 228);
+}
+
+h2 {
+  margin-bottom: 30px;
 }
 
 .myimg {
@@ -39,9 +43,31 @@ hr {
   );
 }
 
+a {
+  text-decoration: none;
+  color: rgb(228, 228, 228);
+}
+
+a:hover {
+  color: rgb(141, 114, 114);
+}
+
 .contact {
   float: left;
 }
 
 .front_end {
+}
+
+.stack_content {
+  margin-left: 50px;
+}
+
+.img_dogcare {
+  width: 550px;
+  height: 400px;
+}
+
+span {
+  font-size: 12px;
 }

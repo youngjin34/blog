@@ -80,11 +80,13 @@ export default function Menubar() {
           전체보기
         </span>
       </Link>
-      <Link className="menu_item" to="/introduction">
-        <div className={selectedMenu === null ? 'selected' : ''}>
-          자기소개서
-        </div>
+      <Link
+        className={selectedMenu === null ? 'selected' : 'menu_item'}
+        to="/introduction"
+      >
+        <span>자기소개서</span>
       </Link>
+
       {menuItems.map((item, index) => (
         <div key={index}>
           <Link
