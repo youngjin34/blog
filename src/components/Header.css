@@ -8,12 +8,13 @@
 
 .Header {
   font-family: 'SokchoBadaBatang';
+  font-size: 32px;
   text-decoration-line: none;
   color: rgb(141, 114, 114);
 }
 
 hr {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 0;
   margin-bottom: 50px;
 }

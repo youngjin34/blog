@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { firestore } from '../firebase';
 import './MenuPage.css';
 
-const ITEMS_PER_PAGE = 4; // 페이지당 아이템 개수
+const ITEMS_PER_PAGE = 6; // 페이지당 아이템 개수
 
 export default function MenuPage() {
   const { id } = useParams();

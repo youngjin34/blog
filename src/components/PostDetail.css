@@ -4,19 +4,21 @@
 }
 
 .post {
-  width: 70%;
+  /* width: 70%; */
   margin-left: 18%;
 
-  font-size: 12px;
+  font-size: 20px;
 }
 
 .title {
-  font-size: 16px;
+  font-size: 24px;
+  width: 100%;
 }
 
 button {
   float: right;
   color: rgb(218, 187, 187);
+  font-size: 18px;
 }
 
 hr {
@@ -34,4 +36,10 @@ hr.hr-1 {
     rgba(0, 0, 0, 0.75),
     rgba(0, 0, 0, 0)
   );
+}
+
+img {
+  width: 550px;
+  height: 400px;
+  margin-bottom: 20px;
 }

@@ -28,13 +28,19 @@ export default function PostDetail() {
   }, [id]); // ID를 의존성 배열에 추가하여 ID가 변경될 때마다 useEffect가 실행되도록 함
 
   const handleDelete = async () => {
-    try {
-      await firestore.collection('posts').doc(id).delete();
-      console.log('Post deleted successfully');
-      // 게시물을 삭제한 후에 사용자를 다른 페이지로 리디렉션하거나 필요한 작업을 수행할 수 있습니다.
-      navigate(-1); // 이전 페이지로 이동
-    } catch (error) {
-      console.error('Error deleting post:', error);
+    // 사용자에게 경고창 표시
+    const confirmDelete = window.confirm(
+      '정말로 이 게시물을 삭제하시겠습니까?'
+    );
+    if (confirmDelete) {
+      try {
+        await firestore.collection('posts').doc(id).delete();
+        console.log('Post deleted successfully');
+        // 게시물을 삭제한 후에 사용자를 다른 페이지로 리디렉션하거나 필요한 작업을 수행할 수 있습니다.
+        navigate(-1); // 이전 페이지로 이동
+      } catch (error) {
+        console.error('Error deleting post:', error);
+      }
     }
   };
 
@@ -45,7 +51,21 @@ export default function PostDetail() {
         <div className="post">
           <div className="title">{post.title}</div>
           <hr className="hr-1" />
-          <p>{post.content}</p>
+          {post.imageURL && (
+            <img
+              src={post.imageURL}
+              alt="게시물 이미지"
+              className="post-image"
+            />
+          )}
+          <p>
+            {post.content.split('\n').map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </p>
           <button onClick={handleDelete}>삭제</button>
         </div>
       ) : (

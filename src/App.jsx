@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Write from './components/Write';
 import AllPosts from './components/AllPosts';
 import PostDetail from './components/PostDetail';
+import Introduction from './components/Introduction';
 
 function App() {
   return (
@@ -17,6 +18,11 @@ function App() {
       <div className="App">
         <Routes>
           <Route className="Home" path="/" element={<Home />} />
+          <Route
+            className="Introduction"
+            path="/introduction"
+            element={<Introduction />}
+          />
           <Route className="AllPosts" path="/allposts" element={<AllPosts />} />
           <Route className="MenuPage" path="/menu/:id" element={<MenuPage />} />
           <Route path="/write/:id" element={<Write />} />
